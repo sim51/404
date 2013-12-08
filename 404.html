@@ -1,0 +1,132 @@
+<html>
+<head>
+    <title>404 - Page not found</title>
+    <meta content="">
+    <style>
+        body {
+            max-width: 100%;
+            overflow: hidden;
+        }
+        #k7 {
+            background: #000000 url(img/k7.jpg);
+            height: 768px;
+            width: 1024px;
+            margin: 0 auto;
+        }
+        #title {
+            width: 670px;
+            height: 55px;
+            background-color: #ffffff;
+            z-index: 9999;
+            position: relative;
+            top: 125px;
+            left: 180px;
+        }
+        h1 {
+            text-align: center;
+            font-family:comic sans ms;
+        }
+
+        #bobine-left, #bobine-right {
+            height: 213px;
+            width: 213px;
+            background: url(img/wheel.png);
+            position: relative;
+            float: left;
+            border-radius: 500px;
+            transition: all 10s linear;
+            border: 0px solid black;
+        }
+
+        #bobine-left {
+            top: 158px;
+            left: 199px;
+        }
+
+        #bobine-right {
+            top: 130px;
+            left: 372px;
+            border: 30px solid black;
+        }
+
+        #bobine-left:hover {
+            border: 30px solid black;
+            top: 130px;
+            left: 172px;
+            transform: rotate(800deg);
+        }
+
+        #bobine-left:hover + #bobine-right {
+            border: 0px solid black;
+            top: 155px;
+            left: 350px;
+            transform: rotate(800deg);
+        }
+
+        #container {
+            height: 100%;
+           cursor: none;
+            width: 100%;
+        }
+
+        #mycursor {
+            cursor: none;
+            width: 449px;
+            height: 205px;
+            background: url(img/bic.png) no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10000;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="k7">
+        <div id="title">
+            <h1>404 - Page Not Found</h1>
+        </div>
+        <div id="bobine-left"></div>
+        <div id="bobine-right"></div>
+        <div id="mycursor"></div>
+    </div>
+</div>
+
+<audio>
+    <source src="audio/wish_you_were_here.mp3"></source>
+    <source src="audio/wish_you_were_here.ogg"></source>
+</audio>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#container').mousemove(function (e) {
+            $('#mycursor').css('left', e.clientX + 5).css('top', e.clientY - 200);
+        });
+        var audio = $("audio")[0];
+        audio.currentTime=10;
+        var timeoutId;
+        function timeCounter(){
+            if(audio.currentTime > 10){
+                audio.currentTime = 10;
+            }
+            audio.currentTime = audio.currentTime - 0.1;
+            timeoutId = window.setTimeout(timeCounter,100);
+        }
+        $("#bobine-left").mouseover(function() {
+            audio.pause();
+            timeCounter();
+        });
+        $("#bobine-left").mouseleave(function() {
+            window.clearTimeout(timeoutId);
+            audio.play();
+        });
+
+    });
+</script>
+</body>
+</html>
