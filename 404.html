@@ -36,8 +36,12 @@
             position: relative;
             float: left;
             border-radius: 500px;
-            transition: all 10s linear;
             border: 0px solid black;
+            transition: all 10s linear;
+            -moz-transition: all 10s linear;
+            -webkit-transition:all 10s linear;
+            -o-transition:all 10s linear;
+            moz, webkit
         }
 
         #bobine-left {
@@ -56,6 +60,9 @@
             top: 130px;
             left: 172px;
             transform: rotate(800deg);
+            -moz-transition:rotate(800deg);
+            -webkit-transition:rotate(800deg);
+            -o-transition:rotate(800deg);
         }
 
         #bobine-left:hover + #bobine-right {
@@ -63,6 +70,9 @@
             top: 155px;
             left: 350px;
             transform: rotate(800deg);
+            -moz-transition:rotate(800deg);
+            -webkit-transition:rotate(800deg);
+            -o-transition:rotate(800deg);
         }
 
         #container {
