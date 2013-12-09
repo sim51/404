@@ -4,6 +4,8 @@
     <meta name="author" content="Benoît Simard"/>
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="Aer6BmLRp_kjily3ltrCqys_5KBaRaS_iVIe73dlgVw" />
+    <link href="/auth/public/images/bsimard.png" type="image/png" rel="shortcut icon">
+    <link href="/auth/public/stylesheets/main.less" rel="stylesheet" type="text/css">
     <style>
         body {
             max-width: 100%;
@@ -96,6 +98,43 @@
 </head>
 <body>
 
+<header class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+	<div class="container">
+	    <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	    </button>
+	    <a title="Benoît Simard" href="/" class="brand">
+		<img alt="Benoît SImard" src="/auth/public/images/bsimard.png" class="baseline">
+	    </a>
+	    <nav class="nav-collapse collapse">
+		<ul class="nav">
+		    <li>
+			<a title="Le Blog" href="/blog">Blog</a>
+		    </li>
+		    <li>
+			<a title="About me" href="/about-me">About me</a>
+		    </li>
+		    <li>
+			<a title="Contactez moi !" href="/contact">Contact</a>
+		    </li>
+		</ul>
+	    </nav>
+	    <div class="form-search pull-right">
+		<form action="/search" method="get" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+		    <label for="search">Recherche</label>
+		    <div class="input-append">
+			<input type="text" placeholder="Search" class="input-large search-query" name="search" value="" id="search">
+			<button class="btn" type="submit"><i class="icon-search"></i></button>
+		    </div>
+		</form>
+	    </div>
+	</div>
+    </div>
+</header>
+
 <div id="container">
     <div id="k7">
         <div id="title">
@@ -106,6 +145,55 @@
         <div id="mycursor"></div>
     </div>
 </div>
+
+<footer id="footer">
+    <div class=" blockOdd">
+	<div class="container">
+	    <div class="row-fluid">
+		<div class="span4">
+		    <ul class="pull-left inline">
+			<li>
+			    <a title="License Creative commons : BY-SA" href="http://creativecommons.org/licenses/by-sa/3.0/">
+				<img class="middle" src="/auth/public/images/cc-by-sa.png" alt="CC-BY-SA">
+			    </a>
+			</li>
+			<li>|</li>
+			<li id="mentions">
+			    <a title="crédits" href="/credits">
+				Crédits
+			    </a>
+			</li>
+		    </ul>
+		</div>
+
+		<div class="span8">
+		    <ul class="pull-right inline">
+			<li>
+			    <a title="Me contacter" href="/contact">
+				<i class="icon-envelope"></i>
+			    </a>
+			</li>
+			<li>
+			    <a title="Suivez-moi sur Twitter" href="https://www.twitter.com/logisima">
+				<i class="icon-twitter"></i>
+			    </a>
+			</li>
+			<li>
+			    <a title="Mon compte Github" href="https://www.github.com/sim51">
+				<i class="icon-github-alt"></i>
+			    </a>
+			</li>
+			<li>
+			    <a title="Mon profil Linked-In" href="http://www.linkedin.com/pub/beno%C3%AEt-simard/5/8a5/124">
+				<i class="icon-linkedin"></i>
+			    </a>
+			</li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+    </div>
+</footer>
 
 <audio>
     <source src="/404/audio/wish_you_were_here.mp3"></source>
